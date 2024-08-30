@@ -1,8 +1,33 @@
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Menu :model="items">
+  </Menu>
 </template>
+
+<script>
+import { PrimeIcons } from '@primevue/core/api';
+import Menu from 'primevue/menu';
+
+export default {
+  components: {
+    Menu,
+    PrimeIcons,
+  },
+  data() {
+      return {
+          items: [
+              {
+                  label: 'File',
+                  items: [
+                      { label: 'New', icon: PrimeIcons.PLUS },
+                      { label: 'Open', icon: PrimeIcons.DOWNLOAD }
+                  ]
+              }
+          ]
+      };
+  }
+};
+</script>
 
 <style>
 @media (min-width: 1024px) {

@@ -1,22 +1,41 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import { RouterLink, RouterView } from 'vue-router';
+import Drawer from 'primevue/drawer';
+import { PrimeIcons } from '@primevue/core/api';
+import Button from 'primevue/button'
+
+export default {
+  components: {
+    Drawer,
+    Button
+  },
+  data() {
+      return {
+          items: [
+              { lable: 'Tab 1', icon: PrimeIcons.BARS, value: '0' },
+              { lable: 'Tab 2', icon: PrimeIcons.ALIGN_CENTER, value: '1' },
+              { lable: 'Tab 3', icon: PrimeIcons.AMAZON, value: '2' }
+          ]
+      };
+  }
+};
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
   </header>
-
+  <!-- <div class="card flex justify-center">
+    <Drawer v-model:visible="visible" header="Drawer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </Drawer>
+    <Button icon="pi pi-arrow-right" @click="visible = true" />
+  </div> -->
   <RouterView />
 </template>
 
@@ -82,4 +101,5 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
 </style>
