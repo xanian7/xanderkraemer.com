@@ -3,18 +3,23 @@ import { RouterLink, RouterView } from 'vue-router';
 import Drawer from 'primevue/drawer';
 import { PrimeIcons } from '@primevue/core/api';
 import Button from 'primevue/button'
+import Menubar from 'primevue/menubar';
 
 export default {
   components: {
     Drawer,
-    Button
+    Button,
+    Menubar,
   },
   data() {
       return {
           items: [
-              { lable: 'Tab 1', icon: PrimeIcons.BARS, value: '0' },
-              { lable: 'Tab 2', icon: PrimeIcons.ALIGN_CENTER, value: '1' },
-              { lable: 'Tab 3', icon: PrimeIcons.AMAZON, value: '2' }
+              { lable: 'Home', icon: PrimeIcons.HOME, 
+                command: () => this.$router.push('/')
+              },
+              { lable: 'Home', icon: PrimeIcons.INFO_CIRCLE, 
+                command: () => this.$router.push('/about')
+              },
           ]
       };
   }
@@ -24,18 +29,13 @@ export default {
 <template>
   <header>
     <div class="wrapper">
-      <nav>
+      <Menubar :model="items" class="nav-menu"/>
+      <!-- <nav class="left-side">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
+      </nav> -->
     </div>
   </header>
-  <!-- <div class="card flex justify-center">
-    <Drawer v-model:visible="visible" header="Drawer">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </Drawer>
-    <Button icon="pi pi-arrow-right" @click="visible = true" />
-  </div> -->
   <RouterView />
 </template>
 
@@ -48,6 +48,37 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.layout {
+  display: flex;
+}
+
+.left-side {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  margin-top: 0.1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.main-content {
+  margin-left: 25%;
+  padding: 1rem;
+  flex: 1;
 }
 
 nav {

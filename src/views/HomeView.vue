@@ -10,6 +10,7 @@
               </TabPanel>
           </TabPanels>
       </Tabs>
+      <Image src="/src/assets/IMG_5347.jpeg" alt="Image" width="250"></Image>
   </div>
 </template>
 
@@ -21,7 +22,7 @@ import TabList from 'primevue/tablist';
 import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
-
+import Image from 'primevue/image';
 
 export default {
   components: {
@@ -31,13 +32,16 @@ export default {
     Tab, 
     TabPanels,
     PrimeIcons,
+    Image,
   },
   data() {
       return {
           tabs: [
               { title: 'About Me', content: 'My name is Xander Kraemer. I\'m from Cincinnati. I am currently employed at Great American Insurance as an intern under Bonds. I have worked there since May of 2022 and have been involved in many of the Bonds frontend applications.', value: '0' },
               { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '1' },
-              { title: 'Tab 3', content: 'Tab 3 Content', value: '2' }
+              { title: 'Experience', content: 'Vue/Vuetify/PrimeVue', value: '2' },
+              { title: 'Education', content: 'I go to OSU', value: '3' },
+              { title: 'This Site', content: 'Built using Vue 3 + PrimeVue', value: '4' }
           ]
       };
   }
@@ -45,8 +49,10 @@ export default {
 </script>
 
 <style scoped>
-:root {
-    --p-primary-color: #007bff; /* Change this to your desired primary color */
+
+.main-container {
+    min-width: 1000px;
+    min-height: 1000px;
 }
 
 
