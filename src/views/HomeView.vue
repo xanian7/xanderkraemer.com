@@ -1,60 +1,82 @@
+
 <template>
-  <div class="main-container">
-      <Tabs value="0">
-          <TabList>
-              <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
-          </TabList>
-          <TabPanels>
-              <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
-                  <p class="m-0">{{ tab.content }}</p>
-              </TabPanel>
-          </TabPanels>
-      </Tabs>
-      <Image src="/src/assets/IMG_5347.jpeg" alt="Image" width="250"></Image>
+  <div>
+    <div class="wrapper">
+      <Fieldset legend="xanderkraemer.com" :toggleable="true">
+        <h1 class="panel">Xander Kraemer</h1>
+      </Fieldset>
+    </div>
+    <div>
+      <Image src="/src/assets/IMG_5347.jpeg" alt="Image" width="250" class="image"></Image>
+    </div>
+    <div class="divider">
+      <Divider layout="horizontal" class="divider"><b></b></Divider>
+    </div>
+    <div class="socials">
+      <MegaMenu :model="social" class="custom-megamenu"></MegaMenu>
+    </div>
   </div>
 </template>
 
 <script>
 import { PrimeIcons } from '@primevue/core/api';
-
-import Tabs from 'primevue/tabs';
-import TabList from 'primevue/tablist';
-import Tab from 'primevue/tab';
-import TabPanels from 'primevue/tabpanels';
-import TabPanel from 'primevue/tabpanel';
 import Image from 'primevue/image';
+import Divider from 'primevue/divider';
+import MegaMenu from 'primevue/megamenu';
+import Fieldset from 'primevue/fieldset';
+
 
 export default {
   components: {
-    Tabs,
-    TabList,
-    TabPanel,
-    Tab, 
-    TabPanels,
-    PrimeIcons,
     Image,
+    Divider,
+    PrimeIcons,
+    MegaMenu,
+    Fieldset,
   },
   data() {
       return {
-          tabs: [
-              { title: 'About Me', content: 'My name is Xander Kraemer. I\'m from Cincinnati. I am currently employed at Great American Insurance as an intern under Bonds. I have worked there since May of 2022 and have been involved in many of the Bonds frontend applications.', value: '0' },
-              { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '1' },
-              { title: 'Experience', content: 'Vue/Vuetify/PrimeVue', value: '2' },
-              { title: 'Education', content: 'I go to OSU', value: '3' },
-              { title: 'This Site', content: 'Built using Vue 3 + PrimeVue', value: '4' }
+        social: [
+            {label: "Instagram", icon: PrimeIcons.INSTAGRAM,
+              command: () => window.open('https://www.instagram.com/xanian7/', '_blank')
+            },
+            {label: "LinkedIn", icon: PrimeIcons.LINKEDIN,
+            command: () => window.open('https://www.linkedin.com/in/xander-kraemer-99b60b2a7/', '_blank')
+            },
+            {label: "GitHub", icon: PrimeIcons.GITHUB,
+            command: () => window.open('https://github.com/xanian7', '_blank')
+            },
           ]
       };
   }
 };
 </script>
 
-<style scoped>
-
-.main-container {
-    min-width: 1000px;
-    min-height: 1000px;
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
 }
 
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.panel {
+  align-items: center;
+  text-align: center;
+}
 
+.wrapper {
+  padding-bottom: 1rem;
+}
+
+.divider {
+  width: 100%;
+}
 </style>
