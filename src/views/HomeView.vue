@@ -7,7 +7,7 @@
       </Fieldset>
     </div>
     <div>
-      <Image src="/public/IMG_5347.jpeg" alt="Image" width="250" class="image"></Image>
+      <Image src="./IMG_5347.jpeg" alt="Image" width="250" class="image"></Image>
     </div>
     <div class="divider">
       <Divider layout="horizontal" class="divider"><b></b></Divider>
