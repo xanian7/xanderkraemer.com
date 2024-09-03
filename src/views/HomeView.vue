@@ -1,21 +1,23 @@
 
 <template>
-  <div>
-    <div class="wrapper">
-      <Fieldset legend="xanderkraemer.com" :toggleable="true">
-        <h1 class="panel">Xander Kraemer</h1>
-      </Fieldset>
-    </div>
+  <transition name="fade" appear>
     <div>
-      <Image src="./IMG_5347.jpeg" alt="Image" width="250" class="image"></Image>
+      <div class="wrapper">
+        <Fieldset legend="xanderkraemer.com" :toggleable="true">
+          <h1 class="panel">Xander Kraemer</h1>
+        </Fieldset>
+      </div>
+      <div>
+        <Image src="./IMG_5347.jpeg" alt="Image" width="250" class="image"></Image>
+      </div>
+      <div class="divider">
+        <Divider layout="horizontal" class="divider"><b></b></Divider>
+      </div>
+      <div class="socials">
+        <MegaMenu :model="social" class="custom-megamenu"></MegaMenu>
+      </div>
     </div>
-    <div class="divider">
-      <Divider layout="horizontal" class="divider"><b></b></Divider>
-    </div>
-    <div class="socials">
-      <MegaMenu :model="social" class="custom-megamenu"></MegaMenu>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -24,7 +26,6 @@ import Image from 'primevue/image';
 import Divider from 'primevue/divider';
 import MegaMenu from 'primevue/megamenu';
 import Fieldset from 'primevue/fieldset';
-
 
 export default {
   components: {
@@ -52,13 +53,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
     display: flex;
     align-items: center;
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0; 
 }
 
 .image {

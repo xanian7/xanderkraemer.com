@@ -9,8 +9,11 @@ import { definePreset } from '@primevue/themes';
 import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css';
 import { useThemeMode } from './components/UseThemeMode';
+import AnimateOnScroll from 'primevue/animateonscroll';
 
 const app = createApp(App);
+
+app.directive('animateonscroll', AnimateOnScroll);
 
 const { toggleTheme } = useThemeMode();
 

@@ -1,17 +1,18 @@
 <template>
-  <div class="main-container">
-      <Tabs value="0" class="tabs">
-          <TabList>
-              <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
-          </TabList>
-          <TabPanels class="tabs">
-              <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
-                  <p class="m-0 panel">{{ tab.content }}</p>
-              </TabPanel>
-          </TabPanels>
-      </Tabs>
-      <!-- <Image src="/src/assets/IMG_5347.jpeg" alt="Image" width="250" class="image"></Image> -->
-  </div>
+    <transition name="fade" appear>
+        <Panel class="main-container">
+            <Tabs value="0" class="tabs">
+                <TabList>
+                    <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
+                </TabList>
+                <TabPanels class="tabs">
+                    <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
+                        <p class="m-0 panel">{{ tab.content }}</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
+        </Panel>
+    </transition>
 </template>
 
 <script>
@@ -23,6 +24,8 @@ import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
 import Image from 'primevue/image';
+import Panel from 'primevue/panel';
+
 
 export default {
   components: {
@@ -33,6 +36,7 @@ export default {
     TabPanels,
     PrimeIcons,
     Image,
+    Panel,
   },
   data() {
       return {
@@ -55,6 +59,14 @@ export default {
     min-height: 100%;
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0; 
+}
+
 .image {
     position: absolute;
     left: 50%;
@@ -62,7 +74,7 @@ export default {
 }
 
 .panel {
-    min-height: 50rem;
+    min-height: 25rem;
     min-width: 100%;
 }
 
