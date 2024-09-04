@@ -53,19 +53,21 @@
                 </div>
             </Transition>
         </div>
-        <Transition name="fade" appear>
-            <Panel class="main-container">
-                <Tabs value="0" class="tabs">
-                    <TabList>
-                        <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
-                    </TabList>
-                    <TabPanels class="tabs">
-                        <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
-                            <p class="m-0 panel">{{ tab.content }}</p>
-                        </TabPanel>
-                    </TabPanels>
-                </Tabs>
-            </Panel>
+        <Transition name="slide-fade">
+            <div v-if="show" class="about-me-section">
+                <Panel class="main-container">
+                    <Tabs value="0" class="tabs">
+                        <TabList>
+                            <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
+                        </TabList>
+                        <TabPanels class="tabs">
+                            <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
+                                <p class="m-0 panel">{{ tab.content }}</p>
+                            </TabPanel>
+                        </TabPanels>
+                    </Tabs>
+                </Panel>
+            </div>
         </Transition>
     </div>
 </template>
@@ -143,6 +145,10 @@ export default {
     padding-top: 1rem;
 }
 
+.about-me-section {
+    padding-top: 1rem;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease;
 }
@@ -154,6 +160,13 @@ export default {
 .wrapper {
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        flex-direction: row;
+    }
 }
 
 img {
@@ -168,7 +181,7 @@ img {
 }
 
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .slide-fade-leave-active {
@@ -177,7 +190,7 @@ img {
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(-20px);
+  transform: translateX(-100px);
   opacity: 0;
 }
 
