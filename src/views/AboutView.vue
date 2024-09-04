@@ -103,10 +103,9 @@ export default {
   data() {
       return {
           tabs: [
-              { title: 'About Me', content: 'My name is Xander Kraemer. I\'m from Cincinnati. I am currently employed at Great American Insurance as an intern under Bonds.', value: '0' },
-              { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '1' },
-              { title: 'Experience', content: 'Vue/Vuetify/PrimeVue', value: '2' },
-              { title: 'This Site', content: 'Built using Vue 3 + PrimeVue', value: '3' }
+              { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '0' },
+              { title: 'Experience', content: 'I have been in development for 5 years. In that time I have gotten experience in: Vue, Vuetify, Primevue, React, Java, C#, SQL, etc.', value: '1' },
+              { title: 'This Site', content: 'This site was built using Vite, Vue 3, and PrimeVue. It is hosted through GitHub Pages.', value: '2' }
           ],
           show: false,
       };
@@ -120,10 +119,6 @@ export default {
 </script>
 
 <style scoped>
-
-.experience-panel {
-    padding-right: 1rem;
-}
 
 .experience-field {
     min-width: 10rem;
@@ -159,6 +154,8 @@ export default {
 
 @media (min-width: 1024px) {
     .wrapper {
+        display: flex;
+        align-items: center;
         flex-direction: row;
     }
 
@@ -171,7 +168,20 @@ export default {
     height: 3rem;
     border-radius: 50%;
     object-fit: cover;
+    }
+
+    .experience-panel {
+    padding-right: 1rem;
+    }
+
+    .about-me-section {
+        padding-top: 1rem;
+        max-width: 30rem;
+    }
 }
+
+.tablist {
+    padding: 0px;
 }
 
 .image {

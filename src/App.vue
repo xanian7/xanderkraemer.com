@@ -73,6 +73,15 @@ header {
   border-radius: 0.5rem;
 }
 
+/* .container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+  width: 100vh;
+} */
+
+
 .socials {
   position: fixed;
   bottom: 0;
