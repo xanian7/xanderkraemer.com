@@ -7,7 +7,7 @@
                         <div>
                             <div class="experience">
                                 <div class="experience-image">
-                                    <img src="/greatamerican.png" alt="Great American"/>
+                                    <img class="image" src="/greatamerican.png" alt="Great American"/>
                                 </div>
                                 <Divider layout="vertical" class="divider"><b></b></Divider>
                                 <div>
@@ -19,7 +19,7 @@
                             </div>
                             <div class="experience">
                                 <div class="experience-image">
-                                    <img src="/sportys.png" alt="Sporty's"/>
+                                    <img class="image" src="/sportys.png" alt="Sporty's"/>
                                 </div>
                                 <Divider layout="vertical" class="divider"><b></b></Divider>
                                 <div>
@@ -39,7 +39,7 @@
                     <Fieldset legend="School">
                         <div class="experience">
                             <div class="experience-image">
-                                <img src="/ohiostate.png" alt="Ohio State"/>
+                                <img class="image" src="/ohiostate.png" alt="Ohio State"/>
                             </div>
                             <Divider layout="vertical" class="divider"><b></b></Divider>
                             <div>
@@ -55,12 +55,12 @@
         </div>
         <Transition name="slide-fade">
             <div v-if="show" class="about-me-section">
-                <Panel class="main-container">
-                    <Tabs value="0" class="tabs">
+                <Panel>
+                    <Tabs value="0">
                         <TabList>
                             <Tab v-for="tab in tabs" :key="tab.title" :value="tab.value">{{ tab.title }}</Tab>
                         </TabList>
-                        <TabPanels class="tabs">
+                        <TabPanels>
                             <TabPanel v-for="tab in tabs" :key="tab.content" :value="tab.value">
                                 <p class="m-0 panel">{{ tab.content }}</p>
                             </TabPanel>
@@ -106,8 +106,7 @@ export default {
               { title: 'About Me', content: 'My name is Xander Kraemer. I\'m from Cincinnati. I am currently employed at Great American Insurance as an intern under Bonds.', value: '0' },
               { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '1' },
               { title: 'Experience', content: 'Vue/Vuetify/PrimeVue', value: '2' },
-              { title: 'Education', content: 'I go to OSU', value: '3' },
-              { title: 'This Site', content: 'Built using Vue 3 + PrimeVue', value: '4' }
+              { title: 'This Site', content: 'Built using Vue 3 + PrimeVue', value: '3' }
           ],
           show: false,
       };
@@ -122,17 +121,12 @@ export default {
 
 <style scoped>
 
-.header {
-    text-align: center;
-    font-size: 30px;
-}
-
 .experience-panel {
     padding-right: 1rem;
 }
 
 .experience-field {
-    min-width: 20rem;
+    min-width: 10rem;
 }
 
 .experience {
@@ -167,9 +161,20 @@ export default {
     .wrapper {
         flex-direction: row;
     }
+
+    .experience-field {
+        min-width: 20rem;
+    }
+
+    .image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 }
 
-img {
+.image {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
