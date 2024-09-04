@@ -3,7 +3,7 @@
   <transition name="fade" appear>
     <div>
       <div class="wrapper">
-        <Fieldset legend="xanderkraemer.com" :toggleable="true">
+        <Fieldset legend="xanderkraemer.com">
           <h1 class="panel">Xander Kraemer</h1>
         </Fieldset>
       </div>

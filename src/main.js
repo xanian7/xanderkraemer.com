@@ -10,10 +10,12 @@ import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css';
 import { useThemeMode } from './components/UseThemeMode';
 import AnimateOnScroll from 'primevue/animateonscroll';
+import Tooltip from 'primevue/tooltip';
 
 const app = createApp(App);
 
 app.directive('animateonscroll', AnimateOnScroll);
+app.directive('tooltip', Tooltip);
 
 const { toggleTheme } = useThemeMode();
 
