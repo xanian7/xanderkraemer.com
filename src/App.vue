@@ -35,6 +35,9 @@ export default {
               { label: 'About', icon: PrimeIcons.INFO_CIRCLE, 
                 command: () => this.$router.push('/about')
               },
+              { label: 'Games', icon: PrimeIcons.PLAY,
+                command: () => this.$router.push('/games')
+              }
           ],
           social: [
             {label: "Instagram", icon: PrimeIcons.INSTAGRAM,
