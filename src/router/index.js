@@ -26,6 +26,16 @@ const router = createRouter({
       path: '/games/sandbox',
       name: 'sandbox',
       component: () => import('../views/Sandbox.vue')
+    },
+    {
+      path: '/games/gravitydraw',
+      name: 'gravitydraw',
+      component: () => import('../views/GravityDraw.vue')
+    },
+    {
+      path: '/background',
+      name: 'background',
+      component: () => import('../views/GamesBackground.vue')
     }
   ]
 })
