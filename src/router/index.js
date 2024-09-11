@@ -36,6 +36,11 @@ const router = createRouter({
       path: '/background',
       name: 'background',
       component: () => import('../views/GamesBackground.vue')
+    },
+    {
+      path: '/games/randomnumbers',
+      name: 'randomnumbers',
+      component: () => import('../views/RandomNumberGame.vue')
     }
   ]
 })

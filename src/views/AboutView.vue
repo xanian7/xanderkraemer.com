@@ -103,7 +103,7 @@ export default {
   data() {
       return {
           tabs: [
-              { title: 'Projects', content: 'I have experimented with creating multiple different video games. When I started creating video games I started by making a Mario-like 2D platformer based around a pixel art of a slime I had created to learn animation. Soon I moved onto 3D applications by creating a sandbox game that I was able to experiment with 3D movement and also controller support using Unity.', value: '0' },
+              { title: 'Projects', content: '', value: '0' },
               { title: 'Experience', content: 'I have been in development for 5 years. In that time I have gotten experience in: Vue, Vuetify, Primevue, React, Java, C#, SQL, etc.', value: '1' },
               { title: 'This Site', content: 'This site was built using Vite, Vue 3, and PrimeVue. It is hosted through GitHub Pages.', value: '2' }
           ],
