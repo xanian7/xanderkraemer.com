@@ -41,6 +41,11 @@ const router = createRouter({
       path: '/games/randomnumbers',
       name: 'randomnumbers',
       component: () => import('../views/RandomNumberGame.vue')
+    },
+    {
+      path: '/games/wordle',
+      name: 'wordle',
+      component: () => import('../views/WordleView.vue')
     }
   ]
 })

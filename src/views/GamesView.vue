@@ -9,6 +9,15 @@
                 <Button label="Play" icon="pi pi-play" @click="this.$router.push('/games/sandbox')"></Button>
             </div>
         </Fieldset>
+
+        <Fieldset legend="Wordle">
+            <div class="image-container">
+                <img src="/wordle.png" class="image"/>
+            </div>
+            <div class="button-container">
+                <Button label="Play" icon="pi pi-play" @click="this.$router.push('/games/wordle')"></Button>
+            </div>
+        </Fieldset>
     </div>
   </Transition>
 </template>

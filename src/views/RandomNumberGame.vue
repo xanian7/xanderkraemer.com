@@ -4,9 +4,7 @@
       {{ item.id }} :
     </div>
     <div class="right">
-      <div>
-        <InputNumber v-model="item.number" inputId="integeronly" fluid style="width: 3rem"/>
-      </div>
+      <InputNumber v-model="item.number" inputId="integeronly" fluid style="width: 3rem"/>
     </div>
   </div>
   <div>
@@ -60,6 +58,8 @@ export default {
           {id: 20, number: null},
         ],
         random: null,
+        temp: null,
+        i: null,
       };
   },
   mounted() {
@@ -69,7 +69,13 @@ export default {
   },
   methods: {
     GetRandomNumber() {
-      this.random = Math.floor(Math.random() * 1000) + 1;
+      this.temp = Math.floor(Math.random() * 1000) + 1;
+      this.i = 0;
+      this.random = this.i;
+      while (this.random != this.temp){
+        this.i++;
+      }
+      this.random = this.temp;
     },
   }
 };
