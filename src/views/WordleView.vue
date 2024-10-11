@@ -429,6 +429,36 @@ export default {
   padding: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+  .row {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    min-width: 20px;
+    min-height: 30px;
+    font-size: 1rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #ccc;
+  }
+}
+
 .letter-box {
   display: flex;
   justify-content: center;
